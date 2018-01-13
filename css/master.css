@@ -1,0 +1,359 @@
+html{
+	background: url("../images/bridge.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Helvetica Neue', sans-serif;
+}
+.prof-box{
+	width: 400px;
+	height: 400px;
+	background: rgba(0,0,0,0.4);
+	padding: 40px;
+	color: white;
+	margin: 0 auto;
+	margin-top: 140px;
+	text-align: center;
+}
+
+.prof-pic{
+	border-radius: 50%;
+	width: 200px;
+	height: 210px;
+}
+
+.project-pic{
+	padding-top: 25px;
+	border-radius: 50%;
+	width: 90%;
+	height: 125px;
+}
+
+.side-project-pic{
+	padding-top: 25px;
+	border-radius: 50%;
+	width: 90%;
+	height: 160px;
+}
+
+
+.prof-pic:hover{
+	transform: scale(1.05, 1.05);
+}
+
+.line-break{
+	width: 400px;
+	margin: 0 auto;
+	border-top: 1px solid white;
+}
+
+.social-icons{
+	font-size: 20px;
+}
+
+.social-icons a{
+	color: white;
+	letter-spacing: 8;
+}
+
+h1{
+	font-weight: 1;
+	letter-spacing: 2;
+	font-size: 40px;
+}
+
+p{
+	font-weight: 1;
+	letter-spacing: 1;
+	font-size: 13px;
+
+	margin: 0 auto;
+	animation: type 5s steps(57);
+	overflow: hidden;
+	white-space: nowrap;
+	
+	width: 57ch;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+@keyframes type {
+	0% {
+		width: 0ch;
+	}
+	100% {
+		width: 57ch;
+	}
+}
+
+.prof-work-spacer{
+	width: 100%;
+	height: 4%;
+}
+
+.my-work{
+	width: 100%;
+	overflow: hidden;
+	height: 250px;
+}
+
+.wizard-arangement{
+	width: 100%;
+	overflow: hidden;
+}
+
+.info-tab{
+	position: relative;
+	float: left;
+	width: 80%;
+}
+
+.image-tab{
+	postion: relative;
+	float: left;
+	width: 20%;
+}
+
+.drawing1{
+	position: relative;
+	float: left;
+	width: 30%;
+	left:2.5%;
+}
+
+.drawing2{
+	position: relative;
+	float: left;
+	width: 30%;
+	left: 5%;
+}
+
+.drawing3{
+	position: relative;
+	float: left;
+	width: 30%;
+	left: 7.5%;
+}
+
+
+.drawing-image{
+	padding-top: 7.5px;
+	width: 80%;
+	height: 315px;
+}
+
+.main-container1{
+	position: relative;
+	width: 20%;
+	height: 200px;
+	float: left;
+	left: 4%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.main-container2{
+	position: relative;
+	width: 20%;
+	height: 200px;
+	float: left;
+	left: 8%;
+}
+
+.main-container3{
+	position: relative;
+	width: 20%;
+	height: 200px;
+	float: left;
+	left: 12%;
+}
+
+.main-container4{
+	position: relative;
+	width: 20%;
+	height: 200px;
+	float: left;
+	left: 16%;
+}
+
+.card1{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: all 0.5s ease;
+}
+
+.card1.normal:hover{
+	transform: rotateY(180deg);
+}
+
+.card1.enlarged:hover{
+	transform: none;
+}
+
+.front{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	color: #333;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'zilla slab', sans-serif;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px; 
+	display: table;
+	background: rgba(0,0,0,0.7);
+}
+
+.back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	background: rgba(0,0,0,0.9);
+	color: #333;
+	transform: rotateY(180deg);
+	text-align: center;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px; 
+	display: table;
+}
+
+#medium-logo{
+	width:100%;
+	height: 100%;
+}
+
+.medium-logo{
+	padding-top: 55px;
+}
+
+.medium-logo a{
+	color: white;
+}
+
+#front-school-projects{
+	background-image: url("../images/school.jpg");
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+#front-side-projects{
+	background-image: url("../images/side-projects.jpg");
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+#front-blog{
+	background-image: url("../images/blog.jpg");
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+#front-artwork{
+	background-image: url("../images/art.jpg");
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.school-projects{
+	width: 100%;
+	height: 100%;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px; 
+	display: table-cell;
+	vertical-align: top-text;
+	color: rgba(0,0,0,0.85);
+	padding-top: 60px;
+	font-size: 30px;
+	opacity: 0.7;
+}
+
+.side-projects{
+	width: 100%;
+	height: 100%;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px; 
+	display: table-cell;
+	vertical-align: top-text;
+	color: rgba(1.0,1.0,1.0,0.85);
+	padding-top: 60px;
+	font-size: 30px;
+	opacity: 0.7;
+}
+
+.school-projects-short{
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	padding-top: 20%;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.side-projects-short{
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	padding-top: 20%;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.art-short{
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	padding-top: 20%;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.no-transformation{
+	transform: none;
+}
+
+.project-name{
+	color: #008B8B;
+	font-size: 20px;
+	margin-bottom: 2px;
+}
+
+.project-description{
+	display:inline-block;
+	color: white;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 12px;
+	margin-bottom: 0%;
+}
+
+.technologies{
+	color: white;
+	font-size: 12px;
+	margin-top: 1%;
+}
+
+span{
+	color:#008B8B;
+	font-size: 13px;
+}
+
+h5{
+	color: white;
+}

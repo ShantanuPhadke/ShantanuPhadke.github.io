@@ -1,0 +1,14 @@
+{
+	"name": "tutorial",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "4.13.3",
+		"git": "^0.1.5",
+		"heroku": "^0.2.0"
+	},
+	"author": "Shantanu Phadke",
+	"license": "ISC"
+}

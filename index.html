@@ -1,0 +1,235 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/master.js"></script>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="prof-box">
+		<img src="images/profile_pic.JPG" class="prof-pic">
+
+		<h1> Shantanu Phadke </h1>
+		<h5> Software Engineer | Computer Science / Business Administration Student @ UC Berkeley </h5>
+
+		<div class="line-break"></div>
+
+		<p>
+			Engineer. Entrepreneur. Artist. I like creating stuff.
+		</p>
+
+		<div class="social-icons">
+			<a href="https://www.quora.com/profile/Shantanu-Phadke-1" target="_blank"><i class="fa fa-quora" aria-hidden="true"></i></a>
+			<a href="https://github.com/ShantanuPhadke" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+			<a href="https://www.linkedin.com/in/shantanuphadke/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+		</div>
+	</div>
+
+	<div class="prof-work-spacer"></div>
+
+	<div class="my-work" id="my-work">
+		<div class="main-container1" id="container1">
+			<div class="card1" id="card1">
+				<div class="front" id="front-school-projects">
+					<h5 class="school-projects">School Projects</h5>
+				</div>
+				<div class="back" id="back1">
+					<div class="school-projects-short">
+						<h5> An overview of some of the interesting projects I have worked on while pursuing my undergraduate education at UC Berkeley. </h5>
+					</div>
+					<div class="school-projects-long" style= "display:none;">
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">Wizard Arrangement</h5>
+								<h4 class="project-description"> Given a list of wizards and constraints regarding their ordering, implemented a Python program to output a valid ordering in a reasonable amount of time (~ 1.5 hours for 400 wizards/2000 constraints)</h4>
+								<h4 class="technologies"><span>Technologies:</span> Python, PyPi</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/wizard.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">Classification</h5>
+								<h4 class="project-description">Implemented both a perceptron as well the Gradient Descent Algorithm in order to produce a basic classifier for handwritten digits. In order to make the classifier have a higher accuracy, I implemented a bread-first search in order to find the number of connected-components of black pixels.</h4>
+								<h4 class="technologies"><span>Technologies:</span> Python, TensorFlow</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/classification.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">Bayes Nets</h5>
+								<h4 class="project-description">In this project for my Introduction to Artificial Intelligence class, I implemented some basic features/functions of Bayes Nets, including variable elimination and value-of-perfect-information calculations.</h4>
+								<h4 class="technologies"><span>Technologies:</span> Python</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/bayes_net.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">MIPS Loader/Linker</h5>
+								<h4 class="project-description">As the title suggests, this was a two part project. The first part dealt with producing a Loader for MIPS in C, and the latter portion was making a Linker in the MIPS Assembly Language</h4>
+								<h4 class="technologies"><span>Technologies:</span> C, MIPS</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/linker-loader.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">MIPS CPU</h5>
+								<h4 class="project-description">This is a 2-Stage Pipelined CPU for the MIPS Assembly Language. The main point of this project was to get introduced to digital design, and so the circuits were made in Logism.</h4>
+								<h4 class="technologies"><span>Technologies:</span> Logism</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/chip.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">HARBOR on Apache Hadoop</h5>
+								<h4 class="project-description">This was a project in which I had to implement a simple database system in JAVA using the HADOOP framework. The main functionalities of this database system include being able to search for a given query by making use of the concept of MapReduce</h4>
+								<h4 class="technologies"><span>Technologies:</span> JAVA, HADOOP</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/database.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">Gitlet</h5>
+								<h4 class="project-description">This is a simplification of the version-control software Git, which is frequently used in conjunction with web services such as Github and BitBucket in order to make collaboration amongst programmers more efficiently.</h4>
+								<h4 class="technologies"><span>Technologies:</span> JAVA</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/version-control.jpg" class="project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<h5 class="project-name">Checkers 61BL</h5>
+								<h4 class="project-description">A special version of checkers with special pieces including shields and bombs. Some of the modified rules include that bombs destroy all pieces within one square of their new location after they move, and that shields are immune to the blasts generated by the bombs.</h4>
+								<h4 class="technologies"><span>Technologies:</span> JAVA, Swing</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/checkers.jpg" class="project-pic">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+			
+	
+		<div class="main-container2" id="container2">
+			<div class="card1" id="card2">
+				<div class="front" id="front-side-projects">
+					<h5 class="side-projects"> Side Projects </h5>
+				</div>
+				<div class="back">
+					<div class="side-projects-short">
+						<h5> An overview of some of the projects I have been working on outside of school. </h5>
+					</div>
+					<div class="side-projects-long" style="display:none;">
+						<div class="project-tab">
+							<div class="info-tab">
+								<a href="https://github.com/ShantanuPhadke/StockPortfolioOptimizer"><h5 class="project-name">Stock Portfolio Optimizer</h5></a>
+								<h4 class="project-description"> A python program with the main aim of calculating various important values for a given portfolio (daily portfolio value, daily returns, sharpe ratio, annualized sharpe ratio), and optimizing the portfolio over a given time period based on the Sharpe Ratio, which measures both risk and reward. Continually adding in new features.</h4>
+								<h4 class="technologies"><span>Technologies:</span> Python, Scipy, Matplotlib</h4>
+								<h4 class="technologies"><span>Link:</span> https://github.com/ShantanuPhadke/StockPortfolioOptimizer</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/stocks.jpg" class="side-project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<a href="https://github.com/ShantanuPhadke/PersistentToDoList"><h5 class="project-name" >Persistent To-Do List</h5></a>
+								<h4 class="project-description">A basic To-Do list app that allows users to add in new tasks, categorize them as being urgent or non-urgent, and ultimately mark them as completed once they are done. Utilizes CoreData objects in order to store relevant data persistently.</h4>
+								<h4 class="technologies"><span>Technologies:</span> Swift, XCode</h4>
+								<h4 class="technologies"><span>Link:</span> https://github.com/ShantanuPhadke/PersistentToDoList</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/to-do.jpg" class="side-project-pic">
+							</div>
+						</div>
+
+						<div class="project-tab">
+							<div class="info-tab">
+								<a href="https://github.com/ShantanuPhadke/ArticleSummarizer"><h5 class="project-name" >Article Summarizer</h5></a>
+								<h4 class="project-description">Given any article, will try to find a set of 7 words that summarize the article well. The program attempts to put particular emphasis on proper nouns, so some selected "words" will consist of two separate terms.</h4>
+								<h4 class="technologies"><span>Technologies:</span> Python</h4>
+								<h4 class="technologies"><span>Link:</span> https://github.com/ShantanuPhadke/ArticleSummarizer</h4>
+							</div>
+							<div class="image-tab">
+								<img src="images/summarizer.jpg" class="side-project-pic">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+			
+
+		<div class="main-container3" id="container3">
+			<div class="card1" id="card3">
+				<div class="front" id="front-blog">
+					<h5 class="school-projects"> Blog </h5>
+				</div>
+				<div class="back">
+					<div class="medium-logo">
+						<a href="https://medium.com/@shantanuphadke" target="_blank"><i id="medium-logo" class="fa fa-medium fa-5x" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-container4" id="container4">
+			<div class="card1" id="card4">
+				<div class="front" id="front-artwork">
+					<h5 class="side-projects"> Artwork </h5>
+				</div>
+				<div class="back">
+					<div class="art-short">
+						<h5> Some of the art pieces I have produced over the years. </h5>
+					</div>
+					<div class="art-long" style="display:none;">
+						<div class="drawing1">
+							<img src="images/jaguar.jpg" class="drawing-image">
+							<h5 class="project-name">The Jaguar</h5>
+						</div>
+						<div class="drawing2">
+							<img src="images/dark-knight.jpg" class="drawing-image">
+							<h5 class="project-name">The Dark Knight</h5>
+						</div>
+						<div class="drawing3">
+							<img src="images/self-portrait.jpg" class="drawing-image">
+							<h5 class="project-name">Deconstruction</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+
+</html>
