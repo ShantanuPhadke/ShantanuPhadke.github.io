@@ -1,235 +1,527 @@
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/master.css">
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="js/master.js"></script>
-	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shantanu Phadke — Staff Product Manager, former Staff Software Engineer, and AI builder focused on agentic systems and frontier AI products." />
+  <meta name="theme-color" content="#f3f1eb" />
+  <title>Shantanu Phadke — Frontier AI Product</title>
+  <style>
+    :root{
+      --bg:#f3f1eb;
+      --paper:#fbfaf6;
+      --ink:#151714;
+      --muted:#666b64;
+      --faint:#92978f;
+      --line:#d8d5cc;
+      --blue:#3458d4;
+      --blue-soft:#e7ebff;
+      --mint:#dff0e6;
+      --mint-ink:#26724c;
+      --gold:#f0e6c7;
+      --dark:#101411;
+      --dark2:#171c18;
+      --darkline:#303831;
+      --max:1180px;
+      --radius:24px;
+      --shadow:0 22px 75px rgba(33,34,29,.08);
+    }
 
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.55;letter-spacing:-.012em
+    }
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(243,241,235,.9);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(21,23,20,.07)
+    }
+    .nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-size:16px;font-weight:800;letter-spacing:-.04em}
+    .nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:13px}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-cta{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.52);color:var(--ink)!important}
+
+    .hero{padding:102px 0 74px}
+    .hero-label{
+      display:inline-flex;align-items:center;gap:9px;
+      text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:780;color:var(--blue)
+    }
+    .hero-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px rgba(52,88,212,.09)}
+    h1{
+      margin:23px 0 28px;
+      max-width:1090px;font-size:clamp(58px,8.3vw,106px);
+      line-height:.91;letter-spacing:-.076em;font-weight:820
+    }
+    .hero-grid{display:grid;grid-template-columns:1.28fr .72fr;gap:58px;align-items:end}
+    .hero-copy{font-size:clamp(19px,2vw,23px);color:#40443e;max-width:790px;letter-spacing:-.025em}
+    .hero-copy strong{color:var(--ink);font-weight:700}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid var(--line);border-radius:999px;padding:12px 16px;
+      font-size:13px;font-weight:730;background:rgba(255,255,255,.42);transition:.2s
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(33,34,29,.08)}
+    .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .profile{border-left:1px solid var(--line);padding-left:28px;color:var(--muted);font-size:14px}
+    .profile-photo{
+      width:88px;height:88px;border-radius:22px;overflow:hidden;margin:0 auto 16px;
+      border:1px solid var(--line);background:linear-gradient(135deg,#f8f6f0,#e6e1d6);
+      display:flex;align-items:center;justify-content:center;position:relative
+    }
+    .profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .profile-photo-placeholder{
+      text-align:center;padding:10px;color:#7c817a;font-size:10px;line-height:1.3;letter-spacing:.02em
+    }
+    .profile-photo-placeholder strong{
+      display:block;font-size:11px;color:var(--ink);letter-spacing:-.01em;margin:0 0 4px
+    }
+    .profile strong{display:block;font-size:20px;color:var(--ink);letter-spacing:-.03em;margin-bottom:5px}
+    .meta{margin-top:15px}
+    .meta-label{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--faint);margin-bottom:3px}
+
+    .signal-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .signal{padding:24px 18px 26px;border-right:1px solid var(--line)}
+    .signal:first-child{padding-left:0}.signal:last-child{border-right:0}
+    .signal-title{font-size:19px;font-weight:770;letter-spacing:-.035em}
+    .signal-sub{font-size:11px;color:var(--muted);margin-top:4px}
+
+    section{padding:102px 0}
+    .head{display:grid;grid-template-columns:.78fr 1.22fr;gap:50px;align-items:start;margin-bottom:50px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:770;color:#858a82}
+    h2{font-size:clamp(38px,5.3vw,68px);line-height:.98;letter-spacing:-.06em;margin:7px 0 0}
+    .intro{font-size:18px;color:#4e534c;max-width:700px;margin:25px 0 0}
+
+    .fit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .fit-card{
+      min-height:235px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.34);
+      padding:23px;display:flex;flex-direction:column
+    }
+    .fit-card .n{font-size:10px;letter-spacing:.13em;color:var(--faint)}
+    .fit-card h3{font-size:21px;line-height:1.13;letter-spacing:-.035em;margin:16px 0 9px}
+    .fit-card p{margin:0;color:var(--muted);font-size:12px}
+
+    .professional{
+      background:var(--dark);color:#f5f6f1
+    }
+    .professional .kicker{color:#8f978e}
+    .professional .intro{color:#b3bbb2}
+    .professional h2{color:#f7f8f3}
+    .work-cards{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .work-card{
+      border:1px solid var(--darkline);border-radius:22px;background:var(--dark2);padding:29px
+    }
+    .work-card .company{color:#aebdff;font-size:12px;font-weight:720}
+    .work-card h3{font-size:30px;line-height:1.03;letter-spacing:-.045em;margin:10px 0 13px}
+    .work-card p{font-size:13px;color:#adb5ac;margin:7px 0}
+    .work-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:21px}
+    .work-tag{font-size:10px;color:#8f988f;border:1px solid #343b35;border-radius:999px;padding:6px 8px}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:22px}
+    .metric{border:1px solid #333a34;border-radius:12px;padding:11px}
+    .metric strong{display:block;color:#f4f6f0;font-size:19px;letter-spacing:-.035em}
+    .metric span{font-size:9px;color:#8f978e}
+    .history{margin-top:16px;border:1px solid var(--darkline);border-radius:22px;padding:25px;background:#141814}
+    .history-grid{display:grid;grid-template-columns:160px 1fr;gap:28px}
+    .history-date{font-size:11px;color:#818981}
+    .history h3{font-size:22px;letter-spacing:-.035em;margin:0 0 7px}
+    .history p{font-size:12px;color:#aab2a9;margin:0}
+    .history-numbers{display:flex;gap:20px;flex-wrap:wrap;margin-top:15px}
+    .history-numbers span{font-size:11px;color:#9fa79f}
+    .history-numbers strong{color:#f4f6f0;font-size:15px}
+
+    .bridge{
+      border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);box-shadow:var(--shadow);
+      padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:36px
+    }
+    .bridge h3{font-size:33px;line-height:1.04;letter-spacing:-.045em;margin:0 0 13px}
+    .bridge p{margin:0;color:var(--muted)}
+    .bridge-list{border-left:1px solid var(--line);padding-left:26px}
+    .bridge-row{padding:10px 0;border-bottom:1px solid #e7e3da;display:grid;grid-template-columns:130px 1fr;gap:15px;font-size:12px}
+    .bridge-row:last-child{border-bottom:0}.bridge-row span:first-child{color:var(--faint)}
+
+    .lab{background:#eef0f6}
+    .course-banner{
+      display:grid;grid-template-columns:1.08fr .92fr;gap:30px;border:1px solid #ced3e1;border-radius:22px;
+      background:#f8f9fc;padding:29px;margin-bottom:18px
+    }
+    .course-banner h3{font-size:30px;letter-spacing:-.045em;margin:5px 0 10px}
+    .course-banner p{color:#606660;font-size:13px;margin:0}
+    .course-link{display:inline-block;margin-top:17px;color:var(--blue);font-size:12px;font-weight:720}
+    .course-side{border-left:1px solid #d5d8e0;padding-left:24px}
+    .course-side strong{display:block;font-size:15px;margin-bottom:8px}
+    .course-side p{font-size:12px;color:#686e68}
+
+    .experiments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .exp{
+      min-height:270px;border:1px solid #d4d7df;border-radius:18px;background:#fafbfe;padding:21px;display:flex;flex-direction:column
+    }
+    .exp-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .exp-num{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#92969d}
+    .badge{font-size:9px;border-radius:999px;padding:5px 8px;border:1px solid #d7d9e0;color:#777c77}
+    .badge.active{background:var(--mint);border-color:#c8e3d3;color:var(--mint-ink)}
+    .badge.next{background:var(--gold);border-color:#e5d7ab;color:#85621e}
+    .exp h3{font-size:22px;line-height:1.08;letter-spacing:-.04em;margin:17px 0 8px}
+    .exp p{font-size:12px;color:#666c66;margin:0}
+    .product-q{margin-top:14px;padding-top:13px;border-top:1px solid #e4e5ea;color:#404740;font-size:11px}
+    .exp-footer{margin-top:auto;padding-top:18px;display:flex;gap:6px;flex-wrap:wrap}
+    .tag{border:1px solid #d9dbe2;border-radius:999px;padding:5px 7px;color:#858a85;font-size:9px}
+
+    .trajectory{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .step{min-height:190px;border-top:1px solid var(--ink);padding:19px 8px 0 0}
+    .step .n{font-size:10px;letter-spacing:.12em;color:var(--faint)}
+    .step h3{font-size:21px;letter-spacing:-.035em;margin:15px 0 8px}
+    .step p{font-size:12px;color:var(--muted);margin:0}
+
+    .log-layout{display:grid;grid-template-columns:230px 1fr;gap:58px}
+    .log-side{position:sticky;top:102px;align-self:start;color:var(--muted);font-size:13px}
+    .log-side strong{display:block;font-size:21px;color:var(--ink);letter-spacing:-.03em;margin-bottom:7px}
+    .entries{border-top:1px solid var(--line)}
+    .entry{display:grid;grid-template-columns:125px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .entry-date{font-size:11px;color:var(--faint)}
+    .entry h3{font-size:22px;letter-spacing:-.035em;margin:0 0 7px}
+    .entry p{font-size:13px;color:var(--muted);margin:0}
+    .entry a{display:inline-block;margin-top:12px;font-size:12px;color:var(--blue);font-weight:720}
+    .placeholder{margin-top:11px;border:1px dashed #c8c4ba;border-radius:13px;padding:15px;color:#858980;background:rgba(255,255,255,.28);font-size:11px}
+
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .principle{padding:21px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.3)}
+    .principle .n{font-size:10px;color:var(--faint);letter-spacing:.12em}
+    .principle h3{font-size:19px;line-height:1.15;letter-spacing:-.035em;margin:15px 0 8px}
+    .principle p{font-size:12px;color:var(--muted);margin:0}
+
+    .education{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .school{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(255,255,255,.32)}
+    .school-name{font-size:19px;font-weight:740;letter-spacing:-.03em}
+    .degree{font-size:13px;color:var(--muted);margin-top:10px}
+    .year{font-size:11px;color:var(--faint);margin-top:20px}
+
+    .cta{
+      border-radius:30px;background:var(--dark);color:#f7f8f3;padding:69px 35px;text-align:center
+    }
+    .cta .kicker{color:#8e968d}.cta h2{max-width:870px;margin:7px auto 0}
+    .cta p{max-width:700px;margin:22px auto 0;color:#b3bab1}
+    .cta .btn{border-color:#3d453e;color:#f5f6f1;background:transparent}
+    .cta .btn.primary{background:#f5f6f1;color:#141613;border-color:#f5f6f1}
+
+    footer{padding:30px 0 54px;color:#959a92;font-size:11px;display:flex;justify-content:space-between;gap:18px}
+    .reveal{opacity:0;transform:translateY(15px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.on{opacity:1;transform:none}
+
+    @media(max-width:950px){
+      .nav-links a:not(.nav-cta){display:none}
+      .hero{padding-top:78px}
+      .hero-grid,.head,.work-cards,.bridge,.course-banner,.log-layout{grid-template-columns:1fr}
+      .profile,.bridge-list,.course-side{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}
+      .course-side{border-color:#d5d8e0}
+      .signal-strip{grid-template-columns:1fr 1fr}
+      .signal:nth-child(2){border-right:0}.signal:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .fit-grid,.experiments{grid-template-columns:1fr 1fr}
+      .log-side{position:static}
+      .trajectory{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      .shell{width:min(100% - 26px,var(--max))}
+      h1{font-size:54px}
+      section{padding:76px 0}
+      .signal-strip,.fit-grid,.experiments,.trajectory,.principles,.education{grid-template-columns:1fr}
+      .signal{border-right:0;border-bottom:1px solid var(--line)!important;padding-left:0}
+      .signal:last-child{border-bottom:0!important}
+      .history-grid,.entry{grid-template-columns:1fr;gap:7px}
+      .metrics{grid-template-columns:1fr 1fr}
+      footer{flex-direction:column}
+    }
+  </style>
 </head>
-
 <body>
-	<div class="prof-box">
-		<img src="images/profile_pic.JPG" class="prof-pic">
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">Shantanu Phadke</a>
+      <div class="nav-links">
+        <a href="#fit">Why me</a>
+        <a href="#product">Product work</a>
+        <a href="#lab">Building</a>
+        <a href="#log">Latest</a>
+        <a class="nav-cta" href="Shantanu_Phadke_Resume_2026(1).pdf" target="_blank">Résumé ↗</a>
+      </div>
+    </div>
+  </nav>
 
-		<h1> Shantanu Phadke </h1>
-		<h5> Software Engineer | Computer Science / Business Administration Student @ UC Berkeley </h5>
+  <main id="top">
+    <header class="hero shell">
+      <div class="hero-label"><span class="hero-dot"></span>AI Product · Agentic Systems · Builder</div>
+      <h1>I build products at the edge of what AI can do.</h1>
+      <div class="hero-grid">
+        <div>
+          <p class="hero-copy">
+            I’m <strong>Shantanu Phadke</strong>, a Staff Product Manager and former Staff Software Engineer working on
+            enterprise AI and agentic product experiences. I’ve shipped products at scale across <strong>ServiceNow and GitHub</strong>;
+            outside of work, I’m building a deeper technical practice around <strong>self-improving agents, reasoning, evaluation and AI-native interaction models.</strong>
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#product">Product work ↓</a>
+            <a class="btn" href="#lab">What I’m building</a>
+            <a class="btn" href="mailto:shantanu.cricket@gmail.com">Get in touch ↗</a>
+          </div>
+        </div>
+        <aside class="profile">
+          <div class="profile-photo">
+            <div class="profile-photo-placeholder">
+              <strong>Profile photo</strong>
+              Use the same image as LinkedIn
+            </div>
+          </div>
+          <strong>Staff Product Manager</strong>
+          ServiceNow · Build Agent & AI Platform Core
+          <div class="meta"><div class="meta-label">Previously</div>GitHub AI Product · ServiceNow Staff Engineer</div>
+          <div class="meta"><div class="meta-label">Independent technical track</div>Stanford CS329A · Self-Improving AI Agents</div>
+          <div class="meta"><div class="meta-label">Education</div>Kellogg MBA · Cornell Tech Master’s in CS · UC Berkeley</div>
+        </aside>
+      </div>
+    </header>
 
-		<div class="line-break"></div>
+    <div class="shell signal-strip reveal">
+      <div class="signal"><div class="signal-title">Technical PM</div><div class="signal-sub">Former Staff SWE; comfortable going from interaction model to system constraints.</div></div>
+      <div class="signal"><div class="signal-title">Agentic AI</div><div class="signal-sub">Current product work spans agents, tools, context, permissions, evaluation and long-running execution.</div></div>
+      <div class="signal"><div class="signal-title">Product at scale</div><div class="signal-sub">Enterprise AI, developer workflows, platform products and measurable commercial outcomes.</div></div>
+      <div class="signal"><div class="signal-title">Builder mindset</div><div class="signal-sub">Independent research-to-code track focused on learning frontier mechanisms by implementing them.</div></div>
+    </div>
 
-		<p>
-			Engineer. Entrepreneur. Artist. I like creating stuff.
-		</p>
+    <section id="fit" class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">Where I do my best work</div><h2>Product problems at the intersection.</h2></div>
+        <div><p class="intro">I’m drawn to problems where model capability, product judgment, technical architecture and real-world deployment have to come together.</p></div>
+      </div>
+      <div class="fit-grid">
+        <article class="fit-card reveal"><div class="n">01</div><h3>Translate capability into product.</h3><p>I work closely with engineering on model behavior and platform constraints, then turn emerging capabilities into interaction models, requirements, prototypes and product direction.</p></article>
+        <article class="fit-card reveal"><div class="n">02</div><h3>Operate at a technical level.</h3><p>I came into product after progressing to Staff Software Engineer, so I’m comfortable reasoning across architecture, APIs, evaluation, data, integrations and failure modes.</p></article>
+        <article class="fit-card reveal"><div class="n">03</div><h3>Ship for real users.</h3><p>My experience spans enterprise software, developer products and AI experiences where adoption, workflow quality and measurable outcomes matter.</p></article>
+        <article class="fit-card reveal"><div class="n">04</div><h3>Keep building at the frontier.</h3><p>Outside of work, I’m developing a hands-on practice around self-improving agents: reading the research, implementing the mechanisms, evaluating them and documenting what I learn.</p></article>
+      </div>
+    </section>
 
-		<div class="social-icons">
-			<a href="https://www.quora.com/profile/Shantanu-Phadke-1" target="_blank"><i class="fa fa-quora" aria-hidden="true"></i></a>
-			<a href="https://github.com/ShantanuPhadke" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
-			<a href="https://www.linkedin.com/in/shantanuphadke/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-		</div>
-	</div>
+    <section id="product" class="professional">
+      <div class="shell">
+        <div class="head reveal">
+          <div><div class="kicker">Selected product work</div><h2>AI products, platforms, and enterprise scale.</h2></div>
+          <div><p class="intro">My experience spans agentic product experiences, developer-focused AI, enterprise platforms, customer validation and product work tied to measurable outcomes.</p></div>
+        </div>
 
-	<div class="prof-work-spacer"></div>
+        <div class="work-cards">
+          <article class="work-card reveal">
+            <div class="company">SERVICENOW · 2026 — PRESENT</div>
+            <h3>Staff Product Manager · Build Agent & AI Platform Core</h3>
+            <p>Defining the core interaction model and roadmap for an enterprise AI agent that plans, implements, tests and iterates on application-development work.</p>
+            <p>Shaping collaborative workflows across developers, architects, reviewers and administrators, including shared context, approvals, permissions, progress visibility and human intervention.</p>
+            <p>Leading platform and extensibility strategy across skills, organizational rules, MCP-based tools, workflow data, context, memory and long-running execution.</p>
+            <div class="work-tags"><span class="work-tag">Agentic product UX</span><span class="work-tag">Developer workflows</span><span class="work-tag">Enterprise AI</span><span class="work-tag">Evals</span><span class="work-tag">Platform strategy</span></div>
+          </article>
 
-	<div class="my-work" id="my-work">
-		<div class="main-container1" id="container1">
-			<div class="card1" id="card1">
-				<div class="front" id="front-school-projects">
-					<h5 class="school-projects">School Projects</h5>
-				</div>
-				<div class="back" id="back1">
-					<div class="school-projects-short">
-						<h5> An overview of some of the interesting projects I have worked on while pursuing my undergraduate education at UC Berkeley. Click to find out more! </h5>
-					</div>
-					<div class="school-projects-long" style= "display:none;">
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">Wizard Arrangement</h5>
-								<h4 class="project-description"> Given a list of wizards and constraints regarding their ordering, implemented a Python program to output a valid ordering in a reasonable amount of time (~ 1.5 hours for 400 wizards/2000 constraints)</h4>
-								<h4 class="technologies"><span>Technologies:</span> Python, PyPi</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/wizard.jpg" class="project-pic">
-							</div>
-						</div>
+          <article class="work-card reveal">
+            <div class="company">GITHUB · 2025 — 2026</div>
+            <h3>AI Product Manager</h3>
+            <p>Shipped a GenAI billing and licensing assistant integrated into Slack for roughly 400 Account Executives.</p>
+            <p>Built benchmarking and experimentation infrastructure across user feedback, sentiment, time-to-resolution and iterative product changes.</p>
+            <div class="metrics">
+              <div class="metric"><strong>~400</strong><span>Account Executives served</span></div>
+              <div class="metric"><strong>20%</strong><span>Resolution-time improvement</span></div>
+              <div class="metric"><strong>$6M</strong><span>Annual revenue recovered from fraud strategy</span></div>
+            </div>
+            <div class="work-tags"><span class="work-tag">GenAI product</span><span class="work-tag">Experimentation</span><span class="work-tag">Enterprise adoption</span></div>
+          </article>
+        </div>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">Classification</h5>
-								<h4 class="project-description">Implemented both a perceptron as well the Gradient Descent Algorithm in order to produce a basic classifier for handwritten digits. In order to make the classifier have a higher accuracy, I implemented a bread-first search in order to find the number of connected-components of black pixels.</h4>
-								<h4 class="technologies"><span>Technologies:</span> Python, TensorFlow</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/classification.jpg" class="project-pic">
-							</div>
-						</div>
+        <article class="history reveal">
+          <div class="history-grid">
+            <div class="history-date" style="color:#aebdff;">SERVICENOW · 2019 — 2023</div>
+            <div>
+              <h3>Software Engineer → Staff Software Engineer</h3>
+              <p>Built enterprise workflow, licensing and asset-management products while increasingly owning roadmap, partnerships, go-to-market and cross-functional execution.</p>
+              <div class="history-numbers"><span><strong>$260M</strong> new annual contract value</span><span><strong>$100M</strong> ARR tied to hardware mobile app</span><span><strong>75%</strong> setup-time reduction from NLP prototype</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">Bayes Nets</h5>
-								<h4 class="project-description">In this project for my Introduction to Artificial Intelligence class, I implemented some basic features/functions of Bayes Nets, including variable elimination and value-of-perfect-information calculations.</h4>
-								<h4 class="technologies"><span>Technologies:</span> Python</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/bayes_net.jpg" class="project-pic">
-							</div>
-						</div>
+    <section class="shell reveal">
+      <div class="head">
+        <div><div class="kicker">Independent AI work</div><h2>Research, implemented and tested.</h2></div>
+        <div><p class="intro">Outside of work, I use public research as a starting point for hands-on experiments in reasoning, verification, planning, memory and evaluation.</p></div>
+      </div>
+      <div class="bridge">
+        <div>
+          <h3>A simple research-to-build loop.</h3>
+          <p>Read the mechanism, implement a minimal version, instrument its behavior, compare alternatives and document the product questions that emerge.</p>
+        </div>
+        <div class="bridge-list">
+          <div class="bridge-row"><span>Read</span><span>Primary papers + mechanism notes</span></div>
+          <div class="bridge-row"><span>Implement</span><span>Minimal working system with transparent assumptions</span></div>
+          <div class="bridge-row"><span>Instrument</span><span>Cost, latency, trajectories, scores and failure modes</span></div>
+          <div class="bridge-row"><span>Evaluate</span><span>Compare variants and record both positive and negative results</span></div>
+          <div class="bridge-row"><span>Extend</span><span>Use the strongest insights to shape deeper experiments and prototypes</span></div>
+        </div>
+      </div>
+    </section>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">MIPS Loader/Linker</h5>
-								<h4 class="project-description">As the title suggests, this was a two part project. The first part dealt with producing a Loader for MIPS in C, and the latter portion was making a Linker in the MIPS Assembly Language</h4>
-								<h4 class="technologies"><span>Technologies:</span> C, MIPS</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/linker-loader.jpg" class="project-pic">
-							</div>
-						</div>
+    <section id="lab" class="lab">
+      <div class="shell">
+        <div class="head reveal">
+          <div><div class="kicker">Currently building</div><h2>Learning self-improving agents by building them.</h2></div>
+          <div><p class="intro">Currently I’m working my way through Stanford CS329A, learning more about test-time compute and verification, feedback and tool use, multi-step reasoning and planning, reinforcement learning, search and open-ended self-improvement, agent memory, multimodal interaction, and long-horizon evaluation. I’m implementing the ideas that interest me most and publishing the resulting experiments, evaluations and notes here as I go.</p></div>
+        </div>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">MIPS CPU</h5>
-								<h4 class="project-description">This is a 2-Stage Pipelined CPU for the MIPS Assembly Language. The main point of this project was to get introduced to digital design, and so the circuits were made in Logism.</h4>
-								<h4 class="technologies"><span>Technologies:</span> Logism</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/chip.jpg" class="project-pic">
-							</div>
-						</div>
+        <div class="course-banner reveal">
+          <div>
+            <div class="kicker">Current learning track</div>
+            <h3>Stanford CS329A · Self-Improving AI Agents</h3>
+            <p>Working through topics including test-time compute, verification, feedback and tool use, multi-step planning, search, memory and long-horizon agent evaluation.</p>
+            <a class="course-link" href="https://cs329a.stanford.edu/" target="_blank">Public course page ↗</a>
+          </div>
+          <div class="course-side">
+            <strong>What each experiment includes</strong>
+            <p>A public implementation, a benchmark or evaluation, a useful visualization, concise notes on results and a clear product question.</p>
+          </div>
+        </div>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">HARBOR on Apache Hadoop</h5>
-								<h4 class="project-description">This was a project in which I had to implement a simple database system in JAVA using the HADOOP framework. The main functionalities of this database system include being able to search for a given query by making use of the concept of MapReduce</h4>
-								<h4 class="technologies"><span>Technologies:</span> JAVA, HADOOP</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/database.jpg" class="project-pic">
-							</div>
-						</div>
+        <div class="experiments">
+          <article class="exp reveal"><div class="exp-top"><span class="exp-num">Experiment 01</span><span class="badge active">In progress</span></div><h3>Test-Time Compute Playground</h3><p>Compare repeated sampling, best-of-N and adaptive inference budgets on a small reasoning benchmark.</p><div class="product-q">Product question → When is extra inference actually worth the latency and cost?</div><div class="exp-footer"><span class="tag">Inference scaling</span><span class="tag">Evals</span></div></article>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">Gitlet</h5>
-								<h4 class="project-description">This is a simplification of the version-control software Git, which is frequently used in conjunction with web services such as Github and BitBucket in order to make collaboration amongst programmers more efficiently.</h4>
-								<h4 class="technologies"><span>Technologies:</span> JAVA</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/version-control.jpg" class="project-pic">
-							</div>
-						</div>
+          <article class="exp reveal"><div class="exp-top"><span class="exp-num">Experiment 02</span><span class="badge next">Up next</span></div><h3>Verifier Lab</h3><p>Generate multiple candidates, score them with different verifier strategies and inspect confident verifier failures.</p><div class="product-q">Product question → How should an AI product represent uncertainty when generation outpaces verification?</div><div class="exp-footer"><span class="tag">Verifiers</span><span class="tag">Calibration</span></div></article>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<h5 class="project-name">Checkers 61BL</h5>
-								<h4 class="project-description">A special version of checkers with special pieces including shields and bombs. Some of the modified rules include that bombs destroy all pieces within one square of their new location after they move, and that shields are immune to the blasts generated by the bombs.</h4>
-								<h4 class="technologies"><span>Technologies:</span> JAVA, Swing</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/checkers.jpg" class="project-pic">
-							</div>
-						</div>
+          <article class="exp reveal"><div class="exp-top"><span class="exp-num">Experiment 03</span><span class="badge">Upcoming</span></div><h3>Feedback + Tool-Use Agent</h3><p>Build a small action loop that executes tools, observes feedback and changes its next move.</p><div class="product-q">Product question → When should feedback trigger retry, reflection or escalation?</div><div class="exp-footer"><span class="tag">ReAct</span><span class="tag">Tool use</span></div></article>
 
-					</div>
-				</div>
-			</div>
-		</div>
-			
-	
-		<div class="main-container2" id="container2">
-			<div class="card1" id="card2">
-				<div class="front" id="front-side-projects">
-					<h5 class="side-projects"> Side Projects </h5>
-				</div>
-				<div class="back">
-					<div class="side-projects-short">
-						<h5> An overview of some of the projects I have been working on outside of school. Click to find out more! </h5>
-					</div>
-					<div class="side-projects-long" style="display:none;">
-						<div class="project-tab">
-							<div class="info-tab">
-								<a href="https://github.com/ShantanuPhadke/StockPortfolioOptimizer"><h5 class="project-name">Stock Portfolio Optimizer</h5></a>
-								<h4 class="project-description"> A python program with the main aim of calculating various important values for a given portfolio (daily portfolio value, daily returns, sharpe ratio, annualized sharpe ratio), and optimizing the portfolio over a given time period based on the Sharpe Ratio, which measures both risk and reward. Continually adding in new features.</h4>
-								<h4 class="technologies"><span>Technologies:</span> Python, Scipy, Matplotlib</h4>
-								<h4 class="technologies"><span>Link:</span> https://github.com/ShantanuPhadke/StockPortfolioOptimizer</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/stocks.jpg" class="side-project-pic">
-							</div>
-						</div>
+          <article class="exp reveal"><div class="exp-top"><span class="exp-num">Experiment 04</span><span class="badge">Upcoming</span></div><h3>Planning Search Sandbox</h3><p>Compare direct generation, decomposition, adaptive branching and tree search on multi-step tasks.</p><div class="product-q">Product question → Which parts of agent planning are useful for humans to inspect?</div><div class="exp-footer"><span class="tag">Planning</span><span class="tag">Search</span></div></article>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<a href="https://github.com/ShantanuPhadke/PersistentToDoList"><h5 class="project-name" >Persistent To-Do List</h5></a>
-								<h4 class="project-description">A basic To-Do list app that allows users to add in new tasks, categorize them as being urgent or non-urgent, and ultimately mark them as completed once they are done. Utilizes CoreData objects in order to store relevant data persistently.</h4>
-								<h4 class="technologies"><span>Technologies:</span> Swift, XCode</h4>
-								<h4 class="technologies"><span>Link:</span> https://github.com/ShantanuPhadke/PersistentToDoList</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/to-do.jpg" class="side-project-pic">
-							</div>
-						</div>
+          <article class="exp reveal"><div class="exp-top"><span class="exp-num">Experiment 05</span><span class="badge">Upcoming</span></div><h3>Memory-Augmented Agent</h3><p>Add episodic memory across repeated tasks and measure when retrieval helps or hurts.</p><div class="product-q">Product question → What should an agent remember, and what should it deliberately forget?</div><div class="exp-footer"><span class="tag">Memory</span><span class="tag">Retrieval</span></div></article>
 
-						<div class="project-tab">
-							<div class="info-tab">
-								<a href="https://github.com/ShantanuPhadke/ArticleSummarizer"><h5 class="project-name" >Article Summarizer</h5></a>
-								<h4 class="project-description">Given any article, will try to find a set of 7 words that summarize the article well. The program attempts to put particular emphasis on proper nouns, so some selected "words" will consist of two separate terms.</h4>
-								<h4 class="technologies"><span>Technologies:</span> Python</h4>
-								<h4 class="technologies"><span>Link:</span> https://github.com/ShantanuPhadke/ArticleSummarizer</h4>
-							</div>
-							<div class="image-tab">
-								<img src="images/summarizer.jpg" class="side-project-pic">
-							</div>
-						</div>
+          <article class="exp reveal"><div class="exp-top"><span class="exp-num">Experiment 06</span><span class="badge">Upcoming</span></div><h3>Long-Horizon Eval Harness</h3><p>Track success, cost, intervention and failure modes on multi-step tasks requiring recovery.</p><div class="product-q">Product question → What actually tells us whether an agent is becoming more capable?</div><div class="exp-footer"><span class="tag">Long-horizon</span><span class="tag">Reliability</span></div></article>
+        </div>
+      </div>
+    </section>
 
-					</div>
-				</div>
-			</div>
-		</div>
-			
+    <section class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">Working method</div><h2>From mechanisms to applied systems.</h2></div>
+        <div><p class="intro">A simple loop I use to move from research ideas to stronger technical and product intuition: understand the mechanism, measure it, connect patterns across experiments, and apply the strongest insights in larger builds.</p></div>
+      </div>
+      <div class="trajectory">
+        <div class="step reveal"><div class="n">01</div><h3>Understand</h3><p>Implement small, transparent versions of mechanisms across inference, verification, planning, tools and memory.</p></div>
+        <div class="step reveal"><div class="n">02</div><h3>Measure</h3><p>Compare approaches using shared evaluations, cost, latency and failure analysis.</p></div>
+        <div class="step reveal"><div class="n">03</div><h3>Connect</h3><p>Look for recurring patterns across experiments in trust, control, observability, memory and collaboration.</p></div>
+        <div class="step reveal"><div class="n">04</div><h3>Apply</h3><p>Turn the strongest insights into larger prototypes and useful open-source systems.</p></div>
+      </div>
+    </section>
 
-		<div class="main-container3" id="container3">
-			<div class="card1" id="card3">
-				<div class="front" id="front-blog">
-					<h5 class="school-projects"> Blog </h5>
-				</div>
-				<div class="back">
-					<div class="medium-logo">
-						<a href="https://medium.com/@shantanuphadke" target="_blank"><i id="medium-logo" class="fa fa-medium fa-5x" aria-hidden="true"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
+    <section id="log" class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">Latest</div><h2>What I’m working on now.</h2></div>
+        <div><p class="intro">A lightweight record of the experiments, questions and results I’m actively working through.</p></div>
+      </div>
+      <div class="log-layout">
+        <aside class="log-side reveal"><strong>August 2026</strong>Starting with test-time compute and a shared evaluation baseline.</aside>
+        <div class="entries">
+          <article class="entry reveal"><div class="entry-date">In progress</div><div><h3>Starting with test-time compute</h3><p>I’m setting up a shared evaluation harness and implementing simple inference-scaling approaches so later experiments can be compared against the same tasks, scoring, cost and latency metrics.</p><a href="#lab">View current experiments ↑</a></div></article>
+          <article class="entry reveal"><div class="entry-date">Current questions</div><div><h3>What I’m testing first</h3><p>How much does Best-of-N help? How strong does a verifier need to be before additional sampling becomes worthwhile? How quickly do quality gains flatten relative to inference cost?</p></div></article>
+          <article class="entry reveal"><div class="entry-date">Coming next</div><div><h3>Verification</h3><p>Once the baseline is stable, I’ll compare different verifier strategies and inspect the cases where a verifier is confidently wrong.</p></div></article>
+        </div>
+      </div>
+    </section>
 
-		<div class="main-container4" id="container4">
-			<div class="card1" id="card4">
-				<div class="front" id="front-artwork">
-					<h5 class="side-projects"> Artwork </h5>
-				</div>
-				<div class="back">
-					<div class="art-short">
-						<h5> Some of the art pieces I have produced over the years. Click to see more! </h5>
-					</div>
-					<div class="art-long" style="display:none;">
-						<div class="drawing1">
-							<img src="images/jaguar.jpg" class="drawing-image">
-							<h5 class="project-name">The Jaguar</h5>
-						</div>
-						<div class="drawing2">
-							<img src="images/dark-knight.jpg" class="drawing-image">
-							<h5 class="project-name">The Dark Knight</h5>
-						</div>
-						<div class="drawing3">
-							<img src="images/self-portrait.jpg" class="drawing-image">
-							<h5 class="project-name">Deconstruction</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div>
+    <section class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">Beyond the experiments</div><h2>Questions I want to explore in larger builds.</h2></div>
+        <div><p class="intro">As patterns emerge from the technical work, I’m especially interested in applying them to a few broader AI product problems.</p></div>
+      </div>
 
+      <div class="principles">
+        <div class="principle reveal"><div class="n">01</div><h3>Voice AI evaluation</h3><p>How should teams test conversational agents against hundreds of realistic users before deploying them?</p></div>
+        <div class="principle reveal"><div class="n">02</div><h3>Evidence-first research</h3><p>What should an AI research experience look like when claims, uncertainty and contradictory evidence remain visible?</p></div>
+        <div class="principle reveal"><div class="n">03</div><h3>AI + messy enterprise data</h3><p>How should models work alongside deterministic systems when transforming unreliable real-world data?</p></div>
+        <div class="principle reveal"><div class="n">04</div><h3>Multiplayer AI</h3><p>What changes when an AI participates in a group decision rather than a one-to-one conversation?</p></div>
+        <div class="principle reveal"><div class="n">05</div><h3>Applied vertical AI</h3><p>What does it take to deploy an AI system into a real workflow and demonstrate measurable value?</p></div>
+        <div class="principle reveal"><div class="n">06</div><h3>AI-native interfaces</h3><p>Which interaction models become possible when the product is designed around model capability from the beginning?</p></div>
+      </div>
+    </section>
+
+    <section id="approach" class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">How I work</div><h2>Principles I use when building AI products.</h2></div>
+        <div><p class="intro">A few working principles that guide how I move from model capability to product decisions, prototypes and measurable systems.</p></div>
+      </div>
+      <div class="principles">
+        <div class="principle reveal"><div class="n">01</div><h3>Capability → interaction.</h3><p>Start by asking how a new model behavior should change the user experience—not where another AI button belongs.</p></div>
+        <div class="principle reveal"><div class="n">02</div><h3>Build to reduce ambiguity.</h3><p>Use prototypes and small technical POCs to learn faster than roadmap discussion alone.</p></div>
+        <div class="principle reveal"><div class="n">03</div><h3>Instrument the system.</h3><p>Make cost, latency, trajectories, quality and failure modes observable enough to challenge assumptions.</p></div>
+        <div class="principle reveal"><div class="n">04</div><h3>Design for failure.</h3><p>Evaluation, review, recovery and human intervention are product behaviors, not cleanup work.</p></div>
+        <div class="principle reveal"><div class="n">05</div><h3>Stay close to users.</h3><p>Model novelty matters only when it changes a workflow, removes friction or creates genuinely new capability.</p></div>
+        <div class="principle reveal"><div class="n">06</div><h3>Learn from the mechanism.</h3><p>I prefer public research, transparent implementations and direct measurement over treating frameworks as black boxes.</p></div>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">Writing</div><h2>Notes on AI products and agentic systems.</h2></div>
+        <div><p class="intro">I write periodically about the ideas I’m studying, the products I’m building and the questions that emerge along the way.</p></div>
+      </div>
+
+      <div class="bridge reveal">
+        <div>
+          <h3>Building my way through self-improving agents</h3>
+          <p>A running set of notes connecting current research on reasoning, verification, planning, memory and evaluation to the product questions I find most interesting.</p>
+        </div>
+        <div class="bridge-list">
+          <div class="bridge-row"><span>Status</span><span>First notes coming soon</span></div>
+          <div class="bridge-row"><span>Focus</span><span>Self-improving agents + AI product design</span></div>
+          <div class="bridge-row"><span>Format</span><span>Short essays, build notes and experiment write-ups</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="head reveal">
+        <div><div class="kicker">Education</div><h2>Engineering depth + product training.</h2></div>
+        <div><p class="intro">A hybrid background that lets me move comfortably between technical systems, product strategy and business outcomes.</p></div>
+      </div>
+      <div class="education">
+        <div class="school reveal"><div class="school-name">Kellogg School of Management</div><div class="degree">MBA · Artificial Intelligence</div><div class="year">Northwestern University · 2024</div></div>
+        <div class="school reveal"><div class="school-name">Cornell Tech</div><div class="degree">Masters · Computer Science</div><div class="year">Cornell University · 2019</div></div>
+        <div class="school reveal"><div class="school-name">UC Berkeley</div><div class="degree">Business Administration + Computer Science</div><div class="year">2018</div></div>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="cta reveal">
+        <div class="kicker">Frontier AI product</div>
+        <h2>Interested in hard product problems where model capability is still ahead of the interface.</h2>
+        <p>I’m especially interested in agentic systems, developer products, AI-native workflows and teams turning frontier-model capability into reliable products with real users.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="mailto:shantanu.cricket@gmail.com">shantanu.cricket@gmail.com ↗</a>
+          <a class="btn" href="Shantanu_Phadke_Resume_2026(1).pdf" target="_blank">Résumé ↗</a>
+          <a class="btn" href="#">LinkedIn ↗</a>
+          <a class="btn" href="#">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>© <span id="year"></span> Shantanu Phadke.</span>
+    <span>Product leadership · technical building · agentic AI</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{ if(entry.isIntersecting) entry.target.classList.add("on"); });
+    },{threshold:.08});
+    document.querySelectorAll(".reveal").forEach((el)=>io.observe(el));
+  </script>
 </body>
-
 </html>
